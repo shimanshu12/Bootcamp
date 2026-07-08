@@ -1,0 +1,338 @@
+/* ===================================================
+   HOOKS WORKBENCH — theme tokens
+   =================================================== */
+:root {
+  --bg: #14110f;
+  --panel: #1c170f;
+  --panel-soft: #221b12;
+  --panel-border: rgba(232, 163, 61, 0.16);
+  --accent: #e8a33d;
+  --accent-soft: rgba(232, 163, 61, 0.14);
+  --accent-2: #5c93ad;
+  --text: #f3ece1;
+  --text-muted: #8d8378;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(232, 163, 61, 0.07), transparent 40%),
+    radial-gradient(circle at 88% 92%, rgba(92, 147, 173, 0.08), transparent 45%);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+/* ===================================================
+   LAB SHELL
+   =================================================== */
+.lab {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+
+.lab-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--panel-border);
+  background: var(--accent-soft);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.lab-header h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+
+.lab-sub {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===================================================
+   PANELS (shared card surface)
+   =================================================== */
+.panel {
+  background: linear-gradient(160deg, var(--panel), var(--panel-soft));
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  padding: 22px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.panel:hover {
+  border-color: rgba(232, 163, 61, 0.32);
+}
+
+.panel h1,
+.panel h2,
+.panel h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Main hero gauge — the master counter */
+.hero-panel {
+  margin-bottom: 28px;
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.panel-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.counter-display {
+  font-family: var(--font-mono);
+  font-size: clamp(48px, 9vw, 72px);
+  font-weight: 600;
+  color: var(--accent);
+  text-shadow: 0 0 24px rgba(232, 163, 61, 0.25);
+  letter-spacing: 0.04em;
+  margin-bottom: 22px;
+}
+
+.controls-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ===================================================
+   MODULE GRID
+   =================================================== */
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.module {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.module-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.module-index {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-2);
+  letter-spacing: 0.08em;
+}
+
+.module-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.module-body {
+  flex: 1;
+}
+
+/* ===================================================
+   FORM ELEMENTS
+   =================================================== */
+button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  background: linear-gradient(135deg, var(--accent), #c9842c);
+  border: none;
+  padding: 10px 18px;
+  color: #1a1308;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+.ghost-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--panel-border);
+}
+
+.ghost-btn:hover {
+  color: var(--text);
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+input {
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--panel-border);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text);
+  outline: none;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus {
+  border-color: var(--accent-2);
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===================================================
+   SIGNATURE — physical toggle switch
+   =================================================== */
+.toggle-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.switch {
+  width: 52px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--panel-border);
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.switch-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.switch-on {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.switch-on .switch-thumb {
+  transform: translateX(22px);
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(232, 163, 61, 0.5);
+}
+
+.switch-state {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ===================================================
+   MINI COUNTER (Counter.jsx module)
+   =================================================== */
+.mini-counter {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mini-counter-value {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--accent-2);
+  min-width: 36px;
+  text-align: center;
+}
+
+/* ===================================================
+   JSON / DATA READOUT (MultiForm.jsx)
+   =================================================== */
+.json-output {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-2);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-top: 6px;
+  word-break: break-word;
+}
+
+/* ===================================================
+   RESPONSIVE
+   =================================================== */
+@media (max-width: 520px) {
+  .lab {
+    padding: 40px 16px 60px;
+  }
+  .controls-row {
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
